@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inspiration Academy</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      z-index: 999;
+    }
+
+    nav.scrolled {
+      background-color: #c824e9;
+      box-shadow: 0 2px 5px rgba(21, 5, 5, 0.2);
+    }
+
+    nav .logo {
+      color: #110824;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: rgb(31, 36, 28);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #e2e3ee;
+      transform: scale(1.1);
+    }
+
+    section {
+      height: 100vh;
+      padding: 100px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      text-align: center;
+    }
+
+    #intro { background-color: #e6f607; }
+    #education { background-color: #9cef31; }
+    #achivements { background-color: #f3af30; }
+    #contact { background-color: #86dbe6; }
+
+    .text-content img {
+      margin-top: 20px;
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    input {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 18px;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid #000;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #eb4a0a;
+      color: rgb(71, 199, 241);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d93d00;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        display: none;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: rgb(220, 24, 155);
+        font-size: 28px;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo"><em>Inspiration Academy</em></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#achivements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="intro" class="section active">
+      <div class="text-content">
+        <h1><u>Dr. A.P.J. Abdul Kalam</u></h1>
+        <img src="kalam.jpg" alt="Dr. APJ Abdul Kalam">
+         <p>Dr.APJ Abudl Kalam's full name is <strong>Avul Pakir Jainulabdeen Abdul Kalam</strong>
+          <br> He was born on <strong>OCT 15,1931</strong> in Rameswaram,tamilnadu,India.</br>
+           Kalam was the <strong><em>11th president</em></strong> of India.
+      </div>
+    </section>
+
+    <section id="education" class="section active">
+      <div class="text-content">
+        <h1><u>Education and Family</u></h1>
+         <p>
+            <br>He Came from a humble background.</br>
+             <br>His Father was a <strong>boat owner </strong> and his mother was a <strong>house wife</strong> </br>
+            <br>He Studied physics and aerospace engineering.</br>
+            <br>He Graduated from Madras Institute of Technology<strong> (MIT).</strong></br>
+    </p>
+      </div>
+    </section>
+
+    <section id="achivements" class="section active">
+      <div class="text-content">
+        <h1><u>Achievements</u></h1>
+        <img src="achive.jpg" alt="missile man" style="float:right">
+        <p><br>
+          He is known as the <strong><em>“Missile Man of India”</em></strong> for his work in missile development.</br>
+         <br> Kalam played a leading role in India's space and defense programs, including:</br>
+          <br>→ SLV (Satellite Launch Vehicle)</br>
+         <br> → Agni and Prithvi missiles</br>
+          <br>→ Pokhran-II nuclear tests (1998).</br>
+         <br> Kalam passed away on <strong><em>July 27, 2015</em></strong> in Shillong, Meghalaya, India.</br>
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section active">
+      <div class="text-content">
+        <h1><u>Contact Us</u></h1>
+        <p>You can reach out to us for more information.</p>
+        <form>
+          <label for="email">Email:</label><br>
+          <input type="text" id="email" name="email" required /><br><br>
+
+          <label for="contact-number">Contact Number:</label><br>
+          <input type="number" id="contact-number" name="contact-number" required /><br><br>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
